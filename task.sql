@@ -1,0 +1,8 @@
+CREATE TABLE `task` (
+  `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `priority` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `task`
+  ADD PRIMARY KEY (`id`);
