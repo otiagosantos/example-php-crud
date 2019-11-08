@@ -34,23 +34,19 @@
         <?php
           $sql = "SELECT * FROM task";
           $result = mysqli_query($connect, $sql);
-          while($data = mysqli_fetch_array($result)):
+
+          while($data = mysqli_fetch_array($result)){
+            echo "<li>";
+              echo "<h3>"."$data[title]"."</h3>";
+              echo "<span>Priority: ". "$data[priority] "."</span>";
+              echo "<a href='edit.php?id=$data[id]'>Edit</a>";
+              echo "<a href='php_action/delete.php?id=$data[id]'> Delete</a>";
+            echo "</li>";
+          }
         ?>
-        <li>
-          <h3><?php echo $data['title']; ?></h3>
-          <span>Priority: <?php echo $data['priority']; ?></span>
-        </li>
-          <?php endwhile;?>
       </ul>
     </div>
-
-
-
-
   </div>
-
-  
-
 </body>
 
 </html>
