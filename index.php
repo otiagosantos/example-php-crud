@@ -1,3 +1,5 @@
+<?php include_once 'php_action/db_connect.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +29,20 @@
     </div>
 
     <!-- LISTA DE TASKS -->
-    <div class="render-task"></div>
+    <div class="render-task">
+      <ul>
+        <?php
+          $sql = "SELECT * FROM task";
+          $result = mysqli_query($connect, $sql);
+          while($data = mysqli_fetch_array($result)):
+        ?>
+        <li>
+          <h3><?php echo $data['title']; ?></h3>
+          <span>Priority: <?php echo $data['priority']; ?></span>
+        </li>
+          <?php endwhile;?>
+      </ul>
+    </div>
 
 
 
